@@ -5,12 +5,12 @@ import { Directive, ElementRef, Input } from '@angular/core';
 })
 export class DestacarDirective {
 @Input() appDestacar:string;
-  constructor(public _el:ElementRef) {
+  constructor( private elementRef: ElementRef) {
     
    }
 
-   ngOnInit(){
-     this._el.nativeElement.style.backgroundColor= this.appDestacar || 'yellow';
-   }
+   ngAfterViewInit() {
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = this.appDestacar;
+  }
 
 }

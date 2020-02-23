@@ -1,10 +1,16 @@
 <!-- <app-primer titulo="Tontini" (evento)="trataevento2($event)"></app-primer>
  -->
 
-<app-cabecera></app-cabecera>
+<app-cabecera (evento)="cambiarFondo($event)"></app-cabecera>
 
 
-<router-outlet></router-outlet>
+
+<div *ngIf="this.fondo; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock><router-outlet appDestacar="#342f2f"></router-outlet></ng-template>
+<ng-template #elseBlock><router-outlet appDestacar="white"></router-outlet></ng-template>
+
+
+
 
 
 <app-pie></app-pie>

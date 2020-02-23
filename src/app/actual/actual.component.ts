@@ -12,7 +12,7 @@ import {ActivatedRoute, Params} from '@angular/router'
   styleUrls: ['./actual.component.css']
 })
 export class ActualComponent implements OnInit {
-
+  condicion;
   listaDatos=null;
   listaDatos5diasRAW=null;
   lat1 ;
@@ -34,7 +34,12 @@ export class ActualComponent implements OnInit {
   
   constructor(public _http: HttpClient, public _ajaxservice:AjaxService, public _route: ActivatedRoute) { 
     this.datos()
-    
+    if(this._route.snapshot.params.condicion=="true"){
+      this.condicion=true;
+
+    }else{
+      this.condicion=false;
+    }
   }
 
   ngOnInit(): void {

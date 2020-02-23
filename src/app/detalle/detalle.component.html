@@ -1,1 +1,46 @@
-<p>detalle works!</p>
+<!-- <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body ">
+            <img class="card-img-top" id="imgdetalle" [src]="elemento.urlToImage">
+            <h3 id="title"> {{elemento.title}}</h3> 
+            <h5 id="content" class="m-3">{{elemento.content}} </h5>
+            <h5 id="sources" class="m-3">By {{elemento.source.name}}  -  <a href="{{elemento.url}}">{{elemento.url}}</a></h5>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div> -->
+
+
+<div class="noticia container-fluid" *ngIf="dato">
+    <div class="card ">
+        <div class="card-header">
+            <h1>{{dato.title}}</h1>
+        </div>
+        <div class="card-body text-center">
+            <div class="card-title text-left">
+                <h4>{{dato.author}} - {{dato.publishedAt}}</h4>
+            </div>
+       
+
+            <img class="card-img-top" [src]="dato.urlToImage">
+
+            <p class="card-text text-justify p-3 m-3 h6" style="border: 1px solid gray;">{{dato.content}}</p>
+        </div>
+
+        <div class="card-footer">
+            <p >By {{dato.source.name}}  -  <a href="{{dato.url}}">{{dato.url}}</a></p>
+        </div>
+    
+    </div>
+
+</div>

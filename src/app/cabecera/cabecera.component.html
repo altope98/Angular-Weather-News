@@ -1,9 +1,3 @@
-<!-- <nav>
-
-    <a >Inicio</a> |
-    <a  >Ubicacion actual</a> 
-   
-</nav> -->
 <header>
 <nav class=" navbar-expand-lg  navbar navbar-dark bg-primary" style="border-bottom: 3px solid black;">
     <img src="../../assets/weather-icon-png-11063.png" width="5%" height="5%" class="m-0 p-0">
@@ -15,12 +9,20 @@
           <a class="nav-link h5" [routerLink]="['primer']" routerLinkActive="active">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link h5" [routerLink]="['actual']" routerLinkActive="active">Ubicacion actual</a>
+          <a class="nav-link h5" [routerLink]="['actual', this.condicion]" routerLinkActive="active">Ubicacion actual</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link h5" [routerLink]="['tiempociudad']" routerLinkActive="active">Tiempo por Ciudad</a>
+          <a class="nav-link h5" [routerLink]="['tiempociudad', this.condicion]" routerLinkActive="active">Tiempo por Ciudad</a>
         </li>
+
+
+       <li class="nav-item ml-4" > 
+        <a  class="nav-link h5" (click)="cambiarFondo()" style="cursor: pointer;" > SETTINGS</a>
+
+       </li>
       </ul>
+
+      
       
     </div>
   </nav>

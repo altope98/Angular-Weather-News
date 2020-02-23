@@ -1,6 +1,8 @@
 <div *ngIf="listaDatos && listaDatos5dias" >
 
-    <h1 class="mt-3 ml-5 h1">Tiempo actual en {{listaDatos.name}} y pronostico de 5 dias</h1>
+    <h1 class="mt-3 ml-5 h1" *ngIf="condicion; else no" style="color: white;">Tiempo actual en {{listaDatos.name}} y pronostico de 5 dias</h1>
+
+    <ng-template #no><h1 class="mt-3 ml-5 h1" style="color: black;">Tiempo actual en {{listaDatos.name}} y pronostico de 5 dias</h1></ng-template>
 
     <div class="container card p-0 " style="width: 30rem; ">
         <div class="card-header text-center"  >

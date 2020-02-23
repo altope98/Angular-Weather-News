@@ -14,7 +14,6 @@ export class AjaxService {
   obtenerNoticias(categoria): Observable<any>{
     return this.http.get("https://newsapi.org/v2/top-headlines?country=fr&apiKey="+listaAPIS[1]+"&category="+categoria+"&page=1&pageSize=10"); 
   }
-  
 
   obtenerTiempoUbicacionActual(lat1,lon1): Observable<any>{
     return this.http.get('https://api.openweathermap.org/data/2.5/weather?lat='+lat1+'&lon='+lon1+'&units=metric&appid='+listaAPIS[0]+'');

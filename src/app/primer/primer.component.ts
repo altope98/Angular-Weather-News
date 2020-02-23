@@ -38,9 +38,7 @@ export class PrimerComponent implements OnInit {
     
    } 
 
-  trataevento2(){
-    this.evento.emit("Evento lanzado");
-  }
+
   ngOnInit(): void {
   }
   

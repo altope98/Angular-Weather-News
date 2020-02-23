@@ -11,8 +11,8 @@ import {ActivatedRoute, Params} from '@angular/router'
   styleUrls: ['./tiempociudad.component.css']
 })
 export class TiempociudadComponent implements OnInit {
-
-  ciudad='Madrid';
+  condicion;
+  ciudad='madrid';
   listaDatos=null;
   listaDatos5diasRAW=null;
   dia;
@@ -31,6 +31,14 @@ export class TiempociudadComponent implements OnInit {
   ]
   constructor(public _http: HttpClient, public _ajaxservice:AjaxService, public _route: ActivatedRoute) {
     this.datos()
+
+    if(this._route.snapshot.params.condicion=="true"){
+      this.condicion=true;
+
+    }else{
+      this.condicion=false;
+    }
+
    }
 
   ngOnInit(): void {
@@ -78,7 +86,6 @@ export class TiempociudadComponent implements OnInit {
         },
         error=>{
           console.log(error)
-          alert(error.error.message)
         });
       
      

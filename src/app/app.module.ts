@@ -25,13 +25,15 @@ import { ActualComponent } from './actual/actual.component';
 import { DetalleComponent } from './detalle/detalle.component';
 
 import { TiempociudadComponent } from './tiempociudad/tiempociudad.component';
+import { MayusculaPipe } from './mayuscula.pipe';
+
 
 
 const rutas: Routes=[
   {path: 'primer', component: PrimerComponent},
-  {path: 'primer/:nombre', component: DetalleComponent},
-  {path: 'actual', component: ActualComponent},
-  {path: 'tiempociudad', component: TiempociudadComponent},
+  {path: 'primer/:categoria/:id', component: DetalleComponent},
+  {path: 'actual/:condicion', component: ActualComponent},
+  {path: 'tiempociudad/:condicion', component: TiempociudadComponent},
   {path: '**', component: PrimerComponent}
 ];
 
@@ -46,6 +48,7 @@ const rutas: Routes=[
     ActualComponent,
     DetalleComponent,
     TiempociudadComponent,
+    MayusculaPipe,
   ],
   imports: [
     BrowserModule,

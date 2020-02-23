@@ -7,7 +7,7 @@ export class BorrarPipe implements PipeTransform {
   cadena;
   transform(value: string, ...args: unknown[]): unknown {
     
-    return "jose"+value;
+    return ""+value;
   }
 
 }
